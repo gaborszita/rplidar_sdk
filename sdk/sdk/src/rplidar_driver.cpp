@@ -1821,7 +1821,7 @@ u_result RPlidarDriverImplCommon::grabScanDataHq(rplidar_response_measurement_no
 {
     switch (_dataEvt.wait(timeout))
     {
-    case rp::hal::Event::EVENT_TIMEOUT:
+    case (long unsigned int) rp::hal::Event::EVENT_TIMEOUT:
         count = 0;
         return RESULT_OPERATION_TIMEOUT;
     case rp::hal::Event::EVENT_OK:
